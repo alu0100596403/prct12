@@ -43,8 +43,12 @@ class MatrizDSL
 	end
 
 	def operador
-
+                case @op
+                   when "suma"
+                   	@result = @operandos[0]+@operandos[1]
+                   when "resta"
+                   	@result = @operandos[0]-@operandos[1]
+            	end                
 	end
 
- 
 end
