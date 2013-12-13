@@ -64,9 +64,38 @@ pruebaSumaMixta = MatrizDSL.new("suma") do
 	operando 2,2, 0 => { 0 => 2, 1 => 1 }
 end
 
-pruebaRestaMixta = MatrizDSL.new("suma") do
+pruebaSumaDensa = MatrizDSL.new("suma") do
 	tipoMatriz "Densa"
 	operando 2,2,[[1,2],[3,4]]
+	tipoMatriz "Densa"
+	operando 2,2,[[5,4],[3,2]]
+end
+
+pruebaSumaDispersa = MatrizDSL.new("suma") do
+	tipoMatriz "Dispersa"
+	operando 2,2, 0 => { 0 => 2, 1 => 1 }
+	tipoMatriz "Dispersa"
+	operando 2,2, 0 => { 0 => 2, 1 => 1 }
+end
+
+pruebaRestaMixta = MatrizDSL.new("resta") do
+	tipoMatriz "Densa"
+	operando 2,2,[[1,2],[3,4]]
+	tipoMatriz "Dispersa"
+	operando 2,2, 0 => { 0 => 2, 1 => 1 }
+end
+
+
+pruebaRestaDensa = MatrizDSL.new("resta") do
+	tipoMatriz "Densa"
+	operando 2,2,[[1,2],[3,4]]
+	tipoMatriz "Densa"
+	operando 2,2,[[5,4],[3,2]]
+end
+
+pruebaRestaDispersa = MatrizDSL.new("resta") do
+	tipoMatriz "Dispersa"
+	operando 2,2, 0 => { 0 => 8, 1 => 2 }
 	tipoMatriz "Dispersa"
 	operando 2,2, 0 => { 0 => 2, 1 => 1 }
 end
@@ -76,19 +105,31 @@ pruebaMax = MatrizDSL.new("max") do
 	operando 2,2,[[1,20],[3,4]]
 end
 
+pruebaMin = MatrizDSL.new("min") do
+	tipoMatriz "Densa"
+	operando 2,2,[[1,2],[3,4]]
+end
+
 puts "Prueba Suma Matriz Densa con Dispersa"
 puts pruebaSumaMixta
-#puts "Prueba Suma Matrices Densas"
-#puts pruebaSumaDensa
-#puts "Prueba Suma Matrices Dispersas"
-#puts pruebaSumaDispersa
+
+puts "Prueba Suma Matrices Densas"
+puts pruebaSumaDensa
+
+puts "Prueba Suma Matrices Dispersas"
+puts pruebaSumaDispersa
 
 puts "Prueba Resta Matriz Densa con Dispersa"
 puts pruebaRestaMixta
-#puts "Prueba Resta Matrices Densa"
-#puts pruebaRestaDensa
-#puts "Prueba Resta Matrices Dispersa"
-#puts pruebaRestaDispersa
+
+puts "Prueba Resta Matrices Densa"
+puts pruebaRestaDensa
+
+puts "Prueba Resta Matrices Dispersa"
+puts pruebaRestaDispersa
 
 puts "Maximo de una Matriz"
 puts pruebaMax
+
+puts "Maximo de una Matriz"
+puts pruebaMin
